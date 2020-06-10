@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
@@ -61,3 +62,10 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have succesfully logged out")
     return redirect(reverse('index'))
+
+
+@login_required
+def profile(request):
+    """Renders the user's profile"""
+    user = User.objects.get(email=request.user.email)
+    return render(request, "profile.html", {'profile': user})
