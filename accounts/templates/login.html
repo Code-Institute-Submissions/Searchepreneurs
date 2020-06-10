@@ -12,7 +12,7 @@
     </div>
 {% endif %}
 
-<form>
+<form method="POST">
     <!--We use a csrf token to prevent vulnerability to XSS attacks-->
     {% csrf_token %}
     {{ login_form }}
