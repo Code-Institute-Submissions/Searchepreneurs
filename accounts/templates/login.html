@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<p>LOG IN</p>
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form>
+    <!--We use a csrf token to prevent vulnerability to XSS attacks-->
+    {% csrf_token %}
+    {{ login_form }}
+    <button type="submit">Log In</button>
+</form>
+
+{% endblock %}
