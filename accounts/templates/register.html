@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<p>REGISTER</p>
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form method="POST">
+    <!--We use a csrf token to prevent vulnerability to XSS attacks-->
+    {% csrf_token %}
+    {{ registration_form.as_p }}
+    <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? You can <a href="{% url 'login' %}">Sign In here.</a></p>
+
+{% endblock %}
