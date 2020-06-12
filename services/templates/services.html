@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Plans{% endblock %}
+
+{% block content %}
+<h1>Available Plans:</h1>
+<hr>
+<h6>Sign up to a plan in under 60 seconds!</h6>
+<br>
+
+<div class="row">
+    {% for service in services %}
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.name }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+                    <p class="card-text">Price: £{{ service.description }}</p>
+                    <hr>
+                    <p class="card-text">Pages: {{ service.pages_audited }}</p>
+                    <small>(including homepage)</small>
+                    <a href="#" class="btn btn-primary">Start Now</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
