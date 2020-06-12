@@ -7,9 +7,15 @@ from django.db import models
 class Service(models.Model):
     name = models.CharField(max_length=254, default="")
     description = models.TextField()
-    price = models.DecimalField(decimal_places=2)
+    feature1 = models.CharField(max_length=100, blank=True)
+    feature2 = models.CharField(max_length=100, blank=True)
+    feature3 = models.CharField(max_length=100, blank=True)
+    price = models.DecimalField(decimal_places=2, max_digits=6)
     most_popular = models.BooleanField(default=False)
-    pages = models.FloatField()
+    pages_audited = models.FloatField()
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['price']
