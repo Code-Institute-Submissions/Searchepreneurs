@@ -22,16 +22,16 @@ class EmailAuth:
                 return None
         except User.DoesNotExist:
             return None
-    
+
     def get_user(self, user_id):
-    """Get an instance of the user from the user_id"""
+        """Get an instance of the user from the user_id"""
 
-    try:
-        user = User.objects.get(pk=user_id)
+        try:
+            user = User.objects.get(pk=user_id)
 
-        if user.is_active:
-            return user
-        else:
+            if user.is_active:
+                return user
+            else:
+                return None
+        except User.DoesNotExist:
             return None
-    except User.DoesNotExist:
-        return None
