@@ -11,3 +11,35 @@
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
+.carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#baseContainer {
+    padding: 0;
+}
+
+#titleContainer {
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    width: 60%;
+    height: 20%;
+    text-align: center;
+}
+
+#titleContainer h1 {
+    font-size: 5em;
+}
+
+#titleContainer .container-flex {
+    height: 50%;
+    padding-bottom: 18%;
+}
+
+#titleContainer .row {
+    height: 20%;
+}
