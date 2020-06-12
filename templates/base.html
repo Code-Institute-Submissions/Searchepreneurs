@@ -9,6 +9,9 @@
     <meta name="author" content="Felix Redwood">
     <title>{% block title %}{% endblock %}</title>
 
+    <!--Favicon Link-->
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'img/favicon.jpg' %}"/>
+
     <!--Font Awesome Link-->
     <script src="https://kit.fontawesome.com/904876a056.js" crossorigin="anonymous"></script>
 
@@ -19,7 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-info">
+    <nav class="navbar navbar-expand navbar-dark bg-info fixed-top">
         <a href="{% url 'index' %}">
             <img src="{% static 'img/navbar-logo.png' %}" alt="Navbar Logo" id="navbarLogo">
         </a>
@@ -30,13 +33,15 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                     <li class="nav-item {% block register_active %}{% endblock %}"><a class="nav-link" href="{% url 'register' %}">Register{% block register_current %}{% endblock %}</a></li>
-                    <li class="nav-item {%block login_active%}{% endblock %}"><a class="nav-link" href="{% url 'login' %}">Login{% block login_current %}{% endblock %}</a></li>
+                    <li class="nav-item {% block login_active %}{% endblock %}"><a class="nav-link" href="{% url 'login' %}">Login{% block login_current %}{% endblock %}</a></li>
                 {% endif %}
             </ul>
         </div>
     </nav>
+    <div class="container-fluid" id="baseContainer">
     {% block content %}
     {% endblock %}
+    </div>
 
     <!--JavaScript Links-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
