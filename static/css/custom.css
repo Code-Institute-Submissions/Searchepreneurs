@@ -1,0 +1,13 @@
+#navbarLogo {
+    height: 3em;
+    padding: 0.3em;
+    border-radius: 1em;
+}
+
+#navbarLogo:hover {
+    background-color: #117888;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
