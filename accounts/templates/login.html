@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap_tags %}
 
 {% block title %}Log In{% endblock %}
 
@@ -15,7 +16,7 @@
 <form method="POST">
     <!--We use a csrf token to prevent vulnerability to XSS attacks-->
     {% csrf_token %}
-    {{ login_form }}
+    {{ login_form | as_bootstrap }}
     <button type="submit">Log In</button>
 </form>
 
