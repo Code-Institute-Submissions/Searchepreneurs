@@ -17,6 +17,9 @@ body {
 }
 
 .carousel-item img {
+    /* We use a negative margin-top to cancel out the padding-top of the body.
+    This means that the carousel image only takes up the viewport, not more. */
+    margin-top: -3.6em;
     height: 100vh;
     object-fit: cover;
     overflow: hidden;
