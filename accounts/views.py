@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
@@ -45,6 +46,13 @@ def register(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have succesfully registered")
+                send_mail(
+                    "Your account has been registered",
+                    str("Hi " + user.username + "\n" + "\n" + "You have succesfully registered an account with Searchepreneurs. We hope to work with you soon!"),
+                    "admin@example.com",
+                    [str(user.email)],
+                    fail_silently=True,
+                )
                 return redirect('profile')
             else:
                 messages.error(request,
