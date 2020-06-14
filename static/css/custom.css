@@ -50,3 +50,7 @@ body {
 #titleContainer .row {
     height: 20%;
 }
+
+#copyrightFooter {
+    background-color: #148c9f;
+}
