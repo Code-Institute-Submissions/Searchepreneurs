@@ -39,6 +39,7 @@ class Client(models.Model):
     client_email = models.EmailField(max_length=50)
     client_url = models.URLField(max_length=200)
     client_description = models.TextField(max_length=800)
+    client_date = models.DateField()
 
     def __str__(self):
         return "{0}-{1}-{2} @ {3}".format(self.service.name,
