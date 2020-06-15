@@ -53,4 +53,12 @@ body {
 
 #copyrightFooter {
     background-color: #148c9f;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+#footer .col-sm-6 {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
