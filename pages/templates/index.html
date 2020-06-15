@@ -38,4 +38,84 @@
         </div>
     </div>
 </div>
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="whatIsSeo">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseWhatIsSeo" aria-expanded="true" aria-controls="collapseWhatIsSeo">
+          What even <em>is</em> SEO?
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseWhatIsSeo" class="collapse show" aria-labelledby="whatIsSeo" data-parent="#accordion">
+      <div class="card-body">
+        <p>SEO is short for 'search engine optimization'. Sites that are better optimized in this way will show up more often in search results, leading to a larger number of people visiting the site (after all, <em>anyone</em> who uses google can be a potential customer to a well optimized site.</p>
+        <p>What's important to remember with SEO is that it's <em>not as complicated as you might think</em>, and it's a <em>long term solution</em>, which might take up to 5 months to take effect.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-header" id="whyNeedSeo">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseWhyNeedSeo" aria-expanded="true" aria-controls="collapseWhyNeedSeo">
+          Why does <em>everybody</em> need it?
+        </button>
+      </h5>
+  </div>
+
+    <div id="collapseWhyNeedSeo" class="collapse show" aria-labelledby="whyNeedSeo" data-parent="#accordion">
+      <div class="card-body">
+        <p>SEO is the king of customer aquisition for a number of reasons. For one, it's mostly free and when it does cost you, it's dirt cheap! SEO audits or SEO apps are nothing compared to the cost of PPC (pay per click) advertising or other methods of customer aquisition.</p>
+        <p>In addition, SEO tends to have a high conversion rate, as the users coming to your site are coming from <em>searching</em>for what you're selling. Conversion rates from search results can easily exceed 5%, a stunning number when compared to the industry average of ~2%.</p>
+        <p>Finally, bad SEO practices can <em>cripple</em> your site. Poor loading times are a good example of this. If you look at the graph below, you'll see that if your site's load time exceeds 5 seconds, more than 1 in 5 of your customers are going to leave <em>before even looking at your site</em>:</p>
+        <canvas id="seoLoadTimeChart" width="300" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="card-header" id="preventBadSeo">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapsePreventBadSeo" aria-expanded="true" aria-controls="collapsePreventBadSeo">
+          How to prevent bad SEO from ruining your website
+        </button>
+      </h5>
+  </div>
+
+    <div id="collapsePreventBadSeo" class="collapse show" aria-labelledby="preventBadSeo" data-parent="#accordion">
+      <div class="card-body">
+        <p>Over the years, search engine algorithms have become more and more sophisticated. For sites with good SEO practices, this means that their hard work is rewarded with swathes of new customers.</p>
+        <p>For sites who don't adapt and optimize, however, it means being buried on the 50th page of any search result if you show up at all.</p>
+        <p>Some examples of good SEO practices are:</p>
+        <ul>
+            <li>Quick load speeds</li>
+            <li>No broken links on your site</li>
+            <li>A healthy mixture of links <em>to</em> the site, <em>within</em> the site, and directing <em>out</em> of the site.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-header" id="howWeHelp">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseHowWeHelp" aria-expanded="true" aria-controls="collapseHowWeHelp">
+          How we'll launch your SEO far beyond industry standards
+        </button>
+      </h5>
+  </div>
+
+    <div id="collapseHowWeHelp" class="collapse show" aria-labelledby="howWeHelp" data-parent="#accordion">
+      <div class="card-body">
+        <p>When you purchase an audit from us, one of our auditors will visit the URL that you send them. They'll inspect the code of each page and will use a small number of programs to evaluate your site, as a search engine would.</p>
+        <p>Depending on your payment plan, you may gain extra features. For example, an auditor may index your site to search engines for you, and they might create an alternate, more optimized version of your homepage.</p>
+        <p>After the audit, which will take between 12 and 24 hours, the auditor will write a report which they will email to you, detailing your site's strengths and where it can be improved (important data, such as load times, will be included in this report).</p>
+        <p>You can purchase as many audits as you like, and are also able to write a review for each audit you purchase.</p>
+        <p>We're excited to hear from you soon!</p>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="{% static 'js/chart.js' %}"></script>
 {% endblock %}
