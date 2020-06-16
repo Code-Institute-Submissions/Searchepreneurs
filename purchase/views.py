@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import messages
 from .forms import PurchaseForm, PaymentForm, ClientForm
-from .models import Purchase
+from .models import Purchase, Client
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -12,14 +12,14 @@ from services.views import services
 import stripe
 
 
-# Views for the 'checkout' app
+# Views for the 'purchase' app
 
 
 stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required
-def purchase(request):
+def purchase(request, id):
     if request.method == "POST":
         purchase_form = PurchaseForm(request.POST)
         payment_form = PaymentForm(request.POST)
@@ -47,7 +47,9 @@ def purchase(request):
                 messages.success(request, "You have succesfully paid")
                 return render(request,
                               "create_client.html",
-                              {"purchase": purchase, "service": service, "user": user})
+                              {"purchase": purchase,
+                               "service": service,
+                               "user": user})
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -56,18 +58,20 @@ def purchase(request):
     else:
         purchase_form = PurchaseForm()
         payment_form = PaymentForm()
+        service = Service.objects.get(id=id)
     return render(request,
                   "purchase.html",
                   {"purchase_form": purchase_form},
-                  {"payment_form": payment_form})
+                  {"payment_form": payment_form},
+                  {"service": service})
 
 
 @login_required
-def create_client(request):
+def create_client(request, id):
     if request.method == "POST":
         client_form = ClientForm(request.POST)
         user = User.objects.get(email=request.user.email)
-        service = Service.objects.get(name=request.service.name)
+        service = Service.objects.get(id=id)
         purchase = Purchase.objects.get(username=request.purchase.username)
 
         if purchase:

@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='client',
             name='purchase',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkout.Purchase'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='purchase.Purchase'),
         ),
         migrations.AddField(
             model_name='client',

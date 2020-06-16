@@ -1,9 +1,9 @@
-# Checkout
+# Purchase
 
 
 ## App description:
 
-This is the checkout app. This app will be used to allow the user to 
+This is the purchase app. This app will be used to allow the user to 
 purchase a service.
 
 
