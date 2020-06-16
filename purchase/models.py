@@ -2,7 +2,7 @@ from django.db import models
 from services.models import Service
 from django.contrib.auth.models import User
 
-# Models for the 'checkout' app
+# Models for the 'purchase' app
 
 
 class Purchase(models.Model):
@@ -38,8 +38,8 @@ class Client(models.Model):
     )
     client_email = models.EmailField(max_length=50)
     client_url = models.URLField(max_length=200)
-    client_description = models.TextField(max_length=800)
-    client_date = models.DateField()
+    client_description = models.TextField(max_length=800, blank=False, default="none")
+    client_date = models.DateField(default="0", blank=False)
 
     def __str__(self):
         return "{0}-{1}-{2} @ {3}".format(self.service.name,

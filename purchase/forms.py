@@ -2,7 +2,7 @@ from django import forms
 from .models import Purchase, Client
 
 
-# Forms for the 'checkout' app
+# Forms for the 'purchase' app
 
 class PaymentForm(forms.Form):
 
