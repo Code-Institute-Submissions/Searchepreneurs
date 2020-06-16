@@ -18,10 +18,12 @@ from django.contrib import admin
 from pages.views import index
 from accounts import urls as urls_accounts
 from services import urls as urls_services
+from purchase import urls as urls_purchase
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^services/', include(urls_services)),
+    url(r'^purchase/', include(urls_purchase)),
 ]
