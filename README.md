@@ -1,39 +1,76 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Searchepreneurs
 
-Welcome USER_NAME,
+Searchepreneurs is a website that allows users to purchase 'SEO audits'. What this means is that, 
+after an audit is purchased, an auditor will look through the user's site, as well as use a variety 
+of programs (such as load-time checkers) to evaluate how good that site is at search engine 
+optimization (SEO).
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+An auditor will then be able to write a report to the client, informing them of what they need to 
+do to optimize their site for search engines. With higher-price audits, the auditor may also take 
+their own steps (with the client's permission) to optimize the site, such as generating and 
+submitting an XML sitemap.
 
-## Gitpod Reminders
+Searchepreneurs is run off of the Django framework, to allow for authorization, template usage and 
+the frictionless creation of url routes, models, templates and functions.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
 
-`python3 -m http.server`
+This website is designed for business owners, where part or all of there business is online. These 
+business owners want to improve their site's ranking on search engines such as google.
 
-A blue button should appear to click: *Make Public*,
+Searchepreneurs facilitates this, by allowing a user to purchase an 'audit' for their business's 
+website. When an audit is purchased, a Searchepreneurs employee will inspect the user's site (both 
+visually *and* in google devtools), as well as run it through a website speed tester such as this 
+one from [dotcom tools](https://www.dotcom-tools.com/website-speed-test.aspx).
 
-Another blue button should appear to click: *Open Browser*.
+The navbar and footer of the site are a light blue, while the background for the site is white. This 
+is to ensure that the site looks professional and has a consistent colour scheme.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+In addition, there are four pages on the site relevant to a user's account. These are:
+* The 'profile' page
+* The 'login' page
+* The 'password-reset' page
+* The 'register' page
 
-A blue button should appear to click: *Make Public*,
+There is also the 'logout' function, which logs a user out.
 
-Another blue button should appear to click: *Open Browser*.
+For simplitity and minimalism, the 'profile' and 'logout' navbar links are only availible if the user 
+is already logged in, while the 'login' and 'register' navbar links are only available if the user is 
+*not* logged in.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+In addition, the 'password-reset' page is only accesible by a link in the 'login' page, as it is 
+unlikely that a user would want to reset their password before attempting to log into the site, and 
+therefore it is unnecesary to have the link in the navbar.
 
-## Updates Since The Instructional Video
+### User Stories:
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+#### User Type 1 - Small business owner
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* As a small business owner, I want a cheap audit that tells me the basics of what I need to do. I 
+don't have a lot of resources, so I want to be given simple ways to optimize my site.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### User Type 2 - Moderately Large Business owner
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* As a moderate business owner, I want a moderately priced audit that will give me ways to optimize 
+the site that are within my capabilities. I probably have the basics already optimized for the site 
+and so I wish to learn new, less simple ways to optimize.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### User Type 3 - Large Business owner
 
---------
+* As a large business owner, I am not sensitive to the price of the audit. I want an extensive audit 
+that will thoroughly evaluate my site and will provide me with a large number of ways to optimize, 
+regardless of their cost.
 
-Happy coding!
+#### User Type 4 - Mobile User
+
+* As a mobile user, I want to be able to access this site and pay for an audit using my mobile, as well 
+as wanting the site to look good on a mobile device, so that I can browse the site and decide on a 
+purchase using a mobile phone.
+
+#### User Type 5 - Tablet User
+
+* As a tablet user, I want to be able to access this site and pay for an audit using a tablet, as well 
+as wanting the site to look good on a tablet so that I can browse the site and decide on a purchase using 
+my tablet.
+
+## Features:
