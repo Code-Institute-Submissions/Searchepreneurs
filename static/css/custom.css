@@ -1,6 +1,13 @@
+/* This file contains all custom css stylings used on the site */
+
+/* We add a padding-top of 3.6em so that the body elements are pushed down to prevent them being
+covered up by the navbar */
+
 body {
     padding-top: 3.6em;
 }
+
+/* Styling for the navbarLogo */
 
 #navbarLogo {
     height: 3em;
@@ -16,6 +23,8 @@ body {
     -o-transition: all 0.35s ease-in-out;
 }
 
+/* Styling for the mainpage carousel */
+
 .carousel-item img {
     /* We use a negative margin-top to cancel out the padding-top of the body.
     This means that the carousel image only takes up the viewport, not more. */
@@ -25,9 +34,14 @@ body {
     overflow: hidden;
 }
 
+/* We set padding in the baseContainer div (which contains the {% block content %} section) to 0 to
+ensure the elements within the baseContainer aren't interfered with */
+
 #baseContainer {
     padding: 0;
 }
+
+/* Styling for the titleContainer div, and the elements it contains */
 
 #titleContainer {
     position: absolute;
@@ -51,6 +65,8 @@ body {
     height: 20%;
 }
 
+/* Footer */
+
 #copyrightFooter {
     background-color: #148c9f;
     padding-left: 1em;
@@ -59,6 +75,8 @@ body {
 
 #footer .col-sm-6 {
     padding-top: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0;
+    padding-right:0;
+    margin-left: 1em;
+    margin-right: 1em;
 }
