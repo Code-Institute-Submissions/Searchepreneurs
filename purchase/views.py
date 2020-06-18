@@ -24,32 +24,34 @@ def purchase(request, id):
         purchase_form = PurchaseForm(request.POST)
         payment_form = PaymentForm(request.POST)
         user = User.objects.get(email=request.user.email)
-        service = Service.objects.get(name=request.service.name)
+        service = Service.objects.get(id=id)
 
         if payment_form.is_valid() and purchase_form.is_valid():
             purchase = purchase_form.save(commit=False)
             purchase.date = timezone.now()
             purchase.username = user.username
-            purchase.save
+            purchase.save()
             price = service.price
 
             try:
                 customer = stripe.Charge.create(
-                    amount = int(price * 100),
-                    currency = "GBP",
-                    description = request.user.email,
-                    card = payment_form.cleaned_data['stripe_id'],
+                    amount=int(price * 100),
+                    currency="gbp",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card has been declined")
 
             if customer.paid:
                 messages.success(request, "You have succesfully paid")
+                client_form = ClientForm()
                 return render(request,
                               "create_client.html",
                               {"purchase": purchase,
                                "service": service,
-                               "user": user})
+                               "user": user,
+                               "client_form": client_form})
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -61,9 +63,10 @@ def purchase(request, id):
         service = Service.objects.get(id=id)
     return render(request,
                   "purchase.html",
-                  {"purchase_form": purchase_form},
-                  {"payment_form": payment_form},
-                  {"service": service})
+                  {"purchase_form": purchase_form,
+                   "payment_form": payment_form,
+                   "service": service,
+                   "publishable": settings.STRIPE_PUBLISHABLE})
 
 
 @login_required
@@ -72,7 +75,10 @@ def create_client(request, id):
         client_form = ClientForm(request.POST)
         user = User.objects.get(email=request.user.email)
         service = Service.objects.get(id=id)
-        purchase = Purchase.objects.get(username=request.purchase.username)
+        print(request.POST)
+        purchase = Purchase.objects.get(username=request.user.username)
+        print(request.POST)
+        print(purchase)
 
         if purchase:
             if client_form.is_valid:
@@ -81,7 +87,7 @@ def create_client(request, id):
                 client.service = service
                 client.purchase = purchase
                 client.client_date = timezone.now()
-                client.save
+                client.save()
                 messages.success(request, "Thank you for purchasing an audit! We will be in touch shortly")
                 send_mail(
                     "You recently purchased a site audit",
@@ -93,17 +99,21 @@ def create_client(request, id):
                 return redirect('profile')
             else:
                 print(client_form.errors)
+                print("Client Form is invalid")
                 messages.error(request, "Form is invalid")
         else:
+            messages.error(request, "You have not made a purchase yet")
+            print("No purchase object")
             return redirect(reverse('purchase'))
 
     else:
         client_form = ClientForm()
         user = User.objects.get(email=request.user.email)
         service = Service.objects.get(name=request.service.name)
-        purchase = Purchase.objects.get(date=request.purchase.date)
+        print(request.POST)
+        purchase = Purchase.objects.get(username="admin")
     return render(request, "create_client.html",
-                  {"purchase": purchase, "service": service, "user": user})
+                  {"purchase": purchase, "service": service, "user": user, "client_form": client_form})
 
 
 def redirect_to_services(request):
