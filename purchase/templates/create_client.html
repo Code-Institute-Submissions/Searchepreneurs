@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block title %}Client{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {{ client_form | as_bootstrap }}
+
+    {% csrf_token %}
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
