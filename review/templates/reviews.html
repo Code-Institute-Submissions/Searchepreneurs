@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    {% for review in reviews %}
+        <div class="col-sm-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ review.review_title }}</h5>
+                    <p class="card-text">Rating: {{ review.rating }}/10</p>
+                    <p class="card-text">{{ review.review_description }}</p>
+                    <small>Review by {{ review.review_username }} on {{ review.date_created }}</small>
+                    <small>Last edited {{ review.last_edited }}</small>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
