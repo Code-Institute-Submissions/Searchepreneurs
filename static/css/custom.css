@@ -7,6 +7,7 @@ body {
     padding-top: 3.6em;
 }
 
+
 /* Styling for the navbarLogo */
 
 #navbarLogo {
@@ -22,6 +23,7 @@ body {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
 
 /* Styling for the mainpage carousel */
 
@@ -40,6 +42,7 @@ ensure the elements within the baseContainer aren't interfered with */
 #baseContainer {
     padding: 0;
 }
+
 
 /* Styling for the titleContainer div, and the elements it contains */
 
@@ -65,6 +68,11 @@ ensure the elements within the baseContainer aren't interfered with */
     height: 20%;
 }
 
+#titleContainer p {
+    font-weight: 700;
+}
+
+
 /* Footer */
 
 #copyrightFooter {
@@ -77,6 +85,45 @@ ensure the elements within the baseContainer aren't interfered with */
     padding-top: 1em;
     padding-left: 0;
     padding-right:0;
-    margin-left: 1em;
-    margin-right: 1em;
+    width: 50%;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: rgba(255,255,255,.5);
+}
+
+.footer-link:hover {
+    color: rgba(255,255,255,.9);
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+
+/* Media */
+
+@media (max-width: 600px) {
+    #titleContainer {
+        left: 10%;
+        width: 80%;
+    }
+    #titleContainer h1 {
+        font-size: 2.2em;
+    }
+    #footer .col-sm-6 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 601px and max-width: 1024px) {
+    #titleContainer {
+        left: 10%;
+        width: 80%;
+    }
+    #titleContainer h1 {
+        font-size: 4.1em;
+    }    
 }
