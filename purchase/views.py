@@ -27,6 +27,7 @@ def purchase(request, id):
         service = Service.objects.get(id=id)
 
         if payment_form.is_valid() and purchase_form.is_valid():
+            print("BOTH FORMS ARE VALID")
             purchase = purchase_form.save(commit=False)
             purchase.date = timezone.now()
             purchase.username = user.username
@@ -45,6 +46,7 @@ def purchase(request, id):
 
             if customer.paid:
                 messages.success(request, "You have succesfully paid")
+                print("You have succesfully paid")
                 client_form = ClientForm()
                 return render(request,
                               "create_client.html",
@@ -54,6 +56,7 @@ def purchase(request, id):
                                "client_form": client_form})
             else:
                 messages.error(request, "Unable to take payment")
+                print("Unable to take payment")
         else:
             print(payment_form.errors)
             messages.error(request, "Payment cannot be taken with that card")
@@ -88,7 +91,7 @@ def create_client(request, id):
                 client.purchase = purchase
                 client.client_date = timezone.now()
                 client.save()
-                messages.success(request, "Thank you for purchasing an audit! We will be in touch shortly")
+                messages.success(request, "Thank you for purchasing an audit, we will be in touch shortly!")
                 send_mail(
                     "You recently purchased a site audit",
                     str("Hello " + user.username + "\n" + "\n" + "You recently purchased an audit with Searchepreneurs. One of our auditors will send you an email shortly to introduce themselves to you. Your site is being audited as we speak."),
