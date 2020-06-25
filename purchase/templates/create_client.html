@@ -5,13 +5,14 @@
 {% block title %}Client{% endblock %}
 
 {% block content %}
+<div class="container">
+    <form method="POST" action="{% url 'create_client' service.id %}">
+        {{ client_form | as_bootstrap }}
 
-<form method="POST">
-    {{ client_form | as_bootstrap }}
+        {% csrf_token %}
 
-    {% csrf_token %}
-
-    <button type="submit">Submit</button>
-</form>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 {% endblock %}

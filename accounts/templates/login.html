@@ -6,11 +6,13 @@
 {% block login_active %}active{% endblock %}
 
 {% block content %}
+<div class="container">
 <p>LOG IN</p>
 {% if messages %}
     <div>
         {% for message in messages %}
             {{ message }}
+            <br>
         {% endfor %}
     </div>
 {% endif %}
@@ -24,4 +26,5 @@
 
 <p>Forgot your password?<a href="{% url 'password_reset' %}">Reset Password Here</a></p>
 
+</div>
 {% endblock %}
