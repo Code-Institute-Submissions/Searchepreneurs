@@ -5,7 +5,10 @@
 {% block profile_active %}active{% endblock %}
 
 {% block content %}
-<p>PROFILE</p>
+<br>
+<h1>Your Profile:</h1>
+<hr>
+<br>
 {% if messages %}
     <div>
         {% for message in messages %}
@@ -14,7 +17,18 @@
     </div>
 {% endif %}
 
-<p>Email: {{ profile.email }}</p>
-<p>Username: {{ profile.username }}</p>
+<p>This is your Searchepreneurs profile. Here you can see the email address and username linked to your 
+Searchepreneurs account.</p>
+
+<p>If you're curious about our services, you can check out <a href="{% url 'services' %}">our plans</a>, or contact us at 
+<a href="mailto:SEOcontact@gmail.com">SEOcontact@gmail.com</a></p>
+
+<p>Your Email: {{ profile.email }}</p>
+<p>Your Username: {{ profile.username }}</p>
+
+<small>Forgot your password?<a href="{% url 'password_reset' %}">Reset Password Here</a></small>
+
+<br>
+<br>
 
 {% endblock %}
