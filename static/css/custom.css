@@ -40,11 +40,8 @@ body {
 ensure the elements within the baseContainer aren't interfered with */
 
 #baseContainer {
-    padding-top: 0;
-    margin-left: 1%;
-    margin-right: 1%;
+    padding: 0;
 }
-
 
 /* Styling for the titleContainer div, and the elements it contains */
 
@@ -74,6 +71,12 @@ ensure the elements within the baseContainer aren't interfered with */
     font-weight: 700;
 }
 
+/* Styling for the index.html accordion */
+
+.homepage-accordion button {
+    font-size: 1em;
+    font-weight: 600;
+}
 
 /* Footer */
 
