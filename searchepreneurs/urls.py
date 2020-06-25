@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from pages.views import index
+from pages.views import index, privacy_policy
 from accounts import urls as urls_accounts
 from services import urls as urls_services
 from purchase import urls as urls_purchase
@@ -23,6 +23,7 @@ from purchase import urls as urls_purchase
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
+    url(r'^privacy_policy$', privacy_policy, name="privacy_policy"),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^services/', include(urls_services)),
     url(r'^purchase/', include(urls_purchase)),
