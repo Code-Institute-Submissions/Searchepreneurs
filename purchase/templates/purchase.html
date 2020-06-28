@@ -16,30 +16,36 @@
 
 {% block content %}
 <div class="container">
+<br>
 <div class="row">
-    <p>Your plan:</p>
-    <p>{{ service.name }}</p>
+    <h1>Your plan: {{ service.name }}</h1>
 </div>
+<hr>
+<br>
 
-<form role="form" method="POST" id="payment-form" action="{% url 'purchase' service.id %}">
-    <legend>Payment Details:</legend>
+<form role="form" method="POST" id="payment-form" class="form-horizontal" action="{% url 'purchase' service.id %}">
+    <legend style="font-weight:bold">Payment Details:</legend>
+    <br>
     <div id="credit-card-errors" style="display:none">
         <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
 
-    <div class="form-group col-md-6">
-        {{ purchase_form | as_bootstrap }}
-    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            {{ purchase_form | as_bootstrap }}
+        </div>
 
-    <div class="form-group col-md-6">
-        {{ payment_form | as_bootstrap }}
+        <div class="form-group col-md-6">
+            {{ payment_form | as_bootstrap }}
+        </div>
     </div>
 
     {% csrf_token %}
 
     <div class="form-group col-md-12">
-        <input type="submit" class="btn btn-primary" id="submit_payment_btn" name="commit" value="Submit Payment">
+        <button type="submit" class="btn btn-primary purchase-form-button" id="submit_payment_btn" name="commit">Submit Payment   <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
     </div>
 </form>
 </div>
+<br>
 {% endblock %}
