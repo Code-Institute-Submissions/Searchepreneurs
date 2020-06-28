@@ -8,6 +8,7 @@
 <div class="container">
     <form method="POST" action="{% url 'create_client' service.id %}">
         {{ client_form | as_bootstrap }}
+        <input type="hidden" name="purchase_id" value="{{ purchase.id }}">
 
         {% csrf_token %}
 
