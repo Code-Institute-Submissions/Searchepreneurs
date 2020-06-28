@@ -41,6 +41,7 @@ class Client(models.Model):
     client_description = models.TextField(max_length=800, blank=False, default="none")
     client_date = models.DateField(default="0", blank=False)
     audit_done = models.BooleanField(default=False)
+    review_done = models.BooleanField(default=False)
 
     def __str__(self):
         return "{0}-{1}-{2} @ {3}".format(self.service.name,
