@@ -74,13 +74,17 @@ def purchase(request, id):
 
 @login_required
 def create_client(request, id):
+    print(id)
     if request.method == "POST":
         client_form = ClientForm(request.POST)
         user = User.objects.get(email=request.user.email)
+        print(user)
         service = Service.objects.get(id=id)
         print(request.POST)
-        purchase = Purchase.objects.get(username=request.user.username)
-        print(request.POST)
+        print(service)
+        purchase_id = int(request.POST.get('purchase_id'))
+        print(purchase_id)
+        purchase = Purchase.objects.get(id=purchase_id)
         print(purchase)
 
         if purchase:
