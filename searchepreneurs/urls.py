@@ -19,6 +19,7 @@ from pages.views import index, privacy_policy
 from accounts import urls as urls_accounts
 from services import urls as urls_services
 from purchase import urls as urls_purchase
+from review import urls as urls_review
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^services/', include(urls_services)),
     url(r'^purchase/', include(urls_purchase)),
+    url(r'^review/', include(urls_review)),
 ]
