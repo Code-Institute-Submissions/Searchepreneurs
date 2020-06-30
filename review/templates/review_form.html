@@ -5,6 +5,12 @@
 
 {% block content %}
 <div class="container">
+    <form method="POST" action="{% url 'write_review' client.id %}">
+    {{ login_form | as_bootstrap }}
 
+    <!--We use a csrf token to prevent vulnerability to XSS attacks-->
+    {% csrf_token %}
+    <button type="submit">Log In</button>
+</form>
 </div>
 {% endblock %}
