@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from purchase.models import Client
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
@@ -77,4 +78,9 @@ def logout(request):
 def profile(request):
     """Renders the user's profile"""
     user = User.objects.get(email=request.user.email)
-    return render(request, "profile.html", {'profile': user})
+    print(user)
+    clients = Client.objects.filter(user=request.user.username)
+    print(clients)
+    return render(request,
+                  "profile.html",
+                  {'profile': user, 'clients': clients})
