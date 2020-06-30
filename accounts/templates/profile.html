@@ -25,6 +25,20 @@ Searchepreneurs account.</p>
 <p>If you're curious about our services, you can check out <a href="{% url 'services' %}">our plans</a>, or contact us at 
 <a href="mailto:SEOcontact@gmail.com">SEOcontact@gmail.com</a></p>
 
+{% if clients %}
+    <ul>
+        {% for client in clients %}
+            {% if client.review_done %}
+                <li>{{ client.service.name }} purchased at {{ client.purchase.date }}.</li>
+            {% else %}
+                <li>{{ client.service.name }} purchased at {{ client.purchase.date }}. <a href="{% url 'write_review' client.id %}">Write a review</a>.</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You have not paid for any audits. Purchase an audit <a href="{% url 'services' %}">Here</a>.</p>
+{% endif %}
+
 <p>Your Email: {{ profile.email }}</p>
 <p>Your Username: {{ profile.username }}</p>
 
