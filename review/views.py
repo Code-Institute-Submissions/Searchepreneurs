@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ReviewForm
 from .models import Review
 from django.contrib.auth.models import User
+from purchase.models import Client
 from services.models import Service
 from services.views import services
 
@@ -19,13 +20,13 @@ def write_review(request, id):
     if request.method == "POST":
         review_form = ReviewForm(request.POST)
         user = User.objects.get(email=request.user.email)
-        service = Service.objects.get(id=id)
+        client = Client.objects.get(id=id)
 
         if review_form.is_valid():
             print("REVIEW FORM IS VALID")
             review = review_form.save(commit=False)
             review.review_username = user.username
-            review.review_service = service.name
+            review.review_service = client.service.name
             review.save()
             return redirect('reviews')
     else:
