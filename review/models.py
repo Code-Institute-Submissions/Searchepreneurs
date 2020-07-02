@@ -5,14 +5,14 @@ from django.db import models
 
 
 class Review(models.Model):
-    RATING_CHOICES = [(i, i) for i in range(1, 10)]
+    RATING_CHOICES = [(i, i) for i in range(1, 11)]
 
     review_username = models.CharField(max_length=150, null=False)
     review_service = models.CharField(max_length=254, null=False)
     rating = models.CharField(choices=RATING_CHOICES, max_length=2)
     review_title = models.CharField(max_length=100, null=False)
     review_description = models.TextField()
-    review_image = models.ImageField(upload_to='images')
+    review_image = models.ImageField(upload_to='images', blank=True)
     date_created = models.DateTimeField()
     last_edited = models.DateTimeField()
 
