@@ -4,16 +4,6 @@
 
 {% block title %}Purchase{% endblock %}
 
-{% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2"></script>
-<script type="text/javascript">
-    //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
-        //]]>
-</script>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock %}
-
 {% block content %}
 <div class="container">
 <br>
@@ -24,7 +14,7 @@
 <br>
 
 <form role="form" method="POST" id="payment-form" class="form-horizontal" action="{% url 'purchase' service.id %}">
-    <legend style="font-weight:bold">Payment Details:</legend>
+    <legend style="font-weight:600">Payment Details:</legend>
     <br>
     <div id="credit-card-errors" style="display:none">
         <div class="alert-message block-message error" id="stripe-error-message"></div>
@@ -48,4 +38,14 @@
 </form>
 </div>
 <br>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+        //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
