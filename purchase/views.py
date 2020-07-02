@@ -58,6 +58,7 @@ def purchase(request, id):
                 messages.error(request, "Unable to take payment")
                 print("Unable to take payment")
         else:
+            print("PAYMENT CANNOT BE TAKEN WITH THAT CARD")
             print(payment_form.errors)
             messages.error(request, "Payment cannot be taken with that card")
     else:
