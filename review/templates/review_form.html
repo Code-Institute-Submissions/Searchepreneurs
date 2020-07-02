@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load bootstrap_tags %}
 
 {% block title %}Write a Review!{% endblock %}
 
@@ -10,7 +11,7 @@
 
     <!--We use a csrf token to prevent vulnerability to XSS attacks-->
     {% csrf_token %}
-    <button type="submit">Log In</button>
+    <button type="submit">Submit Review</button>
 </form>
 </div>
 {% endblock %}
