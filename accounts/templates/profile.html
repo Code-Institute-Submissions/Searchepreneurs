@@ -29,9 +29,9 @@ Searchepreneurs account.</p>
     <ul>
         {% for client in clients %}
             {% if client.review_done %}
-                <li>{{ client.service.name }} purchased at {{ client.purchase.date }}.</li>
+                <li>{{ client.service.name }} purchased on {{ client.purchase.date }}.</li>
             {% else %}
-                <li>{{ client.service.name }} purchased at {{ client.purchase.date }}. <a href="{% url 'write_review' client.id %}">Write a review</a>.</li>
+                <li>{{ client.service.name }} purchased on {{ client.purchase.date }}. <a href="{% url 'write_review' client.id %}">Write a review</a>.</li>
             {% endif %}
         {% endfor %}
     </ul>
