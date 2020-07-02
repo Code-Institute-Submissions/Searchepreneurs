@@ -79,8 +79,7 @@ def profile(request):
     """Renders the user's profile"""
     user = User.objects.get(email=request.user.email)
     print(user)
-    clients = Client.objects.filter(user=request.user.username)
+    clients = Client.objects.filter(user=request.user)
     print(clients)
-    return render(request,
-                  "profile.html",
+    return render(request, "profile.html",
                   {'profile': user, 'clients': clients})
