@@ -12,13 +12,14 @@ from services.views import services
 
 def reviews(request):
     """Render the 'reviews' page."""
-    return render(request, "reviews.html")
+    reviews = Review.objects.all()
+    return render(request, "reviews.html", {'reviews': reviews})
 
 
 def write_review(request, id):
     """Render a form where a user can submit a review."""
     if request.method == "POST":
-        review_form = ReviewForm(request.POST)
+        review_form = ReviewForm(request.POST, request.FILES)
         print(review_form)
         user = User.objects.get(email=request.user.email)
         client = Client.objects.get(id=id)
