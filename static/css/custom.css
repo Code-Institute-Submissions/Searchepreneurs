@@ -87,6 +87,22 @@ ensure the elements within the baseContainer aren't interfered with */
 }
 
 
+/* Styling for the 'reviews' page */
+
+.reviews-title {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.review-image {
+    border-radius: 50%;
+}
+
+.review-container {
+    padding: 2em;
+}
+
+
 /* Footer */
 
 #copyrightFooter {
