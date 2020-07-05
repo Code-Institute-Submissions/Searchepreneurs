@@ -12,7 +12,7 @@ class Review(models.Model):
     review_service = models.CharField(max_length=254, null=False)
     rating = models.PositiveIntegerField(choices=RATING_CHOICES)
     review_title = models.CharField(max_length=100, null=False)
-    review_description = models.TextField()
+    review_description = models.TextField(max_length=120)
     review_image = models.ImageField(upload_to='images', blank=True)
     date_created = models.DateTimeField(blank=True, default=timezone.now)
     last_edited = models.DateTimeField(blank=True, default=timezone.now)
