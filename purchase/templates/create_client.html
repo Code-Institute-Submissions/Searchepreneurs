@@ -7,11 +7,14 @@
 {% block content %}
 <div class="container">
 
+<br>
+
 <div class="row">
     <h1>Add Client Information:</h1>
-    <hr>
-    <br>
 </div>
+
+<hr>
+<br>
 
     <form method="POST" action="{% url 'create_client' service.id %}">
         <legend style="font-weight:600">{{ service.name }} Plan</legend>
@@ -20,7 +23,9 @@
 
         {% csrf_token %}
 
-        <button type="submit">Submit</button>
+        <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary wide-button">Submit Client Information</button>
+        </div>
     </form>
 </div>
 <br>
