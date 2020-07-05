@@ -37,8 +37,8 @@
                     <li class="nav-item {% block register_active %}{% endblock %}"><a class="nav-link" href="{% url 'register' %}">Register{% block register_current %}{% endblock %}</a></li>
                     <li class="nav-item {% block login_active %}{% endblock %}"><a class="nav-link" href="{% url 'login' %}">Login{% block login_current %}{% endblock %}</a></li>
                 {% endif %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Plans</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">Reviews</a></li>
+                <li class="nav-item {% block services_active %}{% endblock %}"><a class="nav-link" href="{% url 'services' %}">Plans</a></li>
+                <li class="nav-item {% block reviews_active %}{% endblock %}"><a class="nav-link" href="{% url 'reviews' %}">Reviews</a></li>
             </ul>
         </div>
     </nav>
