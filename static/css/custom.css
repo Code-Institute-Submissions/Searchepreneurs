@@ -118,6 +118,11 @@ ensure the elements within the baseContainer aren't interfered with */
     width: 50%;
 }
 
+.footer-header {
+    color: rgba(255,255,255,.5);
+    font-weight: 750;
+}
+
 .footer-link {
     text-decoration: none;
     color: rgba(255,255,255,.5);
@@ -129,6 +134,10 @@ ensure the elements within the baseContainer aren't interfered with */
     -moz-transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
+}
+
+#copyrightFooter p {
+    color: #d9d9d9;
 }
 
 
