@@ -4,10 +4,8 @@ This file contains the information relevant to testing the features of this proj
 that it works as required.
 
 ## Automated Testing
----
 
 ## Manual Testing
----
 
 ### The project on different screen sizes
 
@@ -64,7 +62,6 @@ there was a single bullet point, stating "Basic purchased on July 5, 2020. Write
 ### Manually testing the 'review' feature
 
 ## A bug in the project - creating 'Client' models:
----
 
 To purchase an audit, a user must first fill out a 'purchase' and 'payment' form, containing payment 
 information, as well as additional information, such as the purchaser's first name.  
