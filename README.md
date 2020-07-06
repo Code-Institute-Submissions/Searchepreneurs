@@ -309,7 +309,7 @@ are shown, so that a user is aware of what product is being reviewed.
 
 The 'testing' section of this README is very long. As such, it has been written in a seperate markdown 
 file in this project, called 'Testing.md'. That file can be found within the project files or with 
-[*this link*]().
+[*this link*](https://github.com/Felix-Redwood/Searchepreneurs/blob/master/Testing.md).
 
 ## Deployment:
 ---
