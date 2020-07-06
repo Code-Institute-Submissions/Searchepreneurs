@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Felix-Redwood/Searchepreneurs.svg?branch=master)](https://travis-ci.com/Felix-Redwood/Searchepreneurs)
+
 # Searchepreneurs
 
 Searchepreneurs is a website that allows users to purchase 'SEO audits'. What this means is that, 
@@ -343,6 +345,16 @@ In Heroku (Where the deployed version of this project is hosted), there are a nu
 * SECRET_KEY
 * STRIPE_PUBLISHABLE
 * STRIPE_SECRET
+
+### Setting up AWS S3 buckets
+
+This project uses AWS S3 in order to host media files (such as images).  
+
+Media files are stored in a public-access bucket called 'searchepreneurs'.  
+
+In order to access this bucket, I have set up a group, called 'searchepreneurs' on AWS IAM 
+(Identity and Access Management), with a user called 'searchepreneurs-user', and a policy 
+called 'searchepreneurs-policy' that allows the group to edit the AWS S3 bucket.  
 
 ### Project Info
 
