@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'services',
     'purchase',
     'review',
+    'storages',
 ]
 
 MIDDLEWARE = [
