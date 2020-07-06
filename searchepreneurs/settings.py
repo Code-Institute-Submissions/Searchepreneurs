@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://searchepreneurs.herokuapp.com/',
+    'searchepreneurs.herokuapp.com',
 ]
 
 
