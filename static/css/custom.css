@@ -96,6 +96,10 @@ ensure the elements within the baseContainer aren't interfered with */
 
 .review-image {
     border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    margin-right: 1em;
+    margin-top: 1em;
 }
 
 .review-container {
