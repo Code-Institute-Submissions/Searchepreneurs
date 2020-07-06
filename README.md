@@ -309,7 +309,7 @@ are shown, so that a user is aware of what product is being reviewed.
 
 The 'testing' section of this README is very long. As such, it has been written in a seperate markdown 
 file in this project, called 'Testing.md'. That file can be found within the project files or with 
-*this link*.
+[*this link*]().
 
 ## Deployment:
 ---
@@ -346,6 +346,23 @@ In Heroku (Where the deployed version of this project is hosted), there are a nu
 * STRIPE_PUBLISHABLE
 * STRIPE_SECRET
 
+### Setting up Travis ci
+
+This project uses the Travis ci to test its builds. To set up Travis, I first connected the github 
+repository for this project to Travis, and pasted a markdown link into the top of this README.  
+
+Then, I created a .travis.yml file, containing the following information:  
+
+language: python  
+python:  
+- "3.4"  
+install: "pip3 install -r requirements.txt"  
+script:  
+- SECRET_KEY="secret" ./manage.py test  
+
+This file tells Travis the language used for the project and its version, as well as providing 
+an install route for the neccesary requirements and generating a placeholder SECRET_KEY variable.
+
 ### Setting up AWS S3 buckets
 
 This project uses AWS S3 in order to host media files (such as images).  
@@ -358,9 +375,9 @@ called 'searchepreneurs-policy' that allows the group to edit the AWS S3 bucket.
 
 ### Project Info
 
-This project can be viewed in its rendered form (the deployed version) in Heroku [here](). 
+This project can be viewed in its rendered form (the deployed version) in Heroku [here](https://searchepreneurs.herokuapp.com/). 
 It can also be viewed in its code form (the development version) in Github
-[here]().
+[here](https://github.com/Felix-Redwood/Searchepreneurs).
 
 In the development version of this project, environment variables are stored in an env.py file, and DEBUG is set 
 to True. In the deployed version, environment variables are stored in Heroku, and DEBUG is set to False.
