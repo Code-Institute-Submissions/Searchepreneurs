@@ -6,7 +6,13 @@
 
 {% block content %}
 <div class="container">
-    <form method="POST" action="{% url 'write_review' client.id %}" enctype="multipart/form-data">
+
+<br>
+<h1>Review a plan:</h1>
+<hr>
+<br>
+
+<form method="POST" action="{% url 'write_review' client.id %}" enctype="multipart/form-data">
     {{ review_form | as_bootstrap }}
 
     <!--We use a csrf token to prevent vulnerability to XSS attacks-->
