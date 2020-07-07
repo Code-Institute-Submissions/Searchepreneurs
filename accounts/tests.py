@@ -24,9 +24,26 @@ class TestRegistration(TestCase):
                                      'password2': 'second-password'})
         self.assertFalse(form.is_valid(), form.errors)
 
-    def test_full_form_is_valid(self):
+    def test_full_registration_form_is_valid(self):
         form = UserRegistrationForm({'username': 'testuser',
                                      'email': 'email@email.com',
                                      'password1': 'testformpassword1',
                                      'password2': 'testformpassword1'})
+        self.assertTrue(form.is_valid(), form.errors)
+
+
+class TestLogin(TestCase):
+
+    def test_can_login_with_just_a_username(self):
+        form = UserLoginForm({'username': 'username'})
+        self.assertFalse(form.is_valid(), form.errors)
+
+    def test_login_form_with_email_is_valid(self):
+        form = UserLoginForm({'username': 'email@email.com',
+                              'password': 'testformpassword1'})
+        self.assertTrue(form.is_valid(), form.errors)
+
+    def test_login_form_with_username_is_valid(self):
+        form = UserRegistrationForm({'username': 'testuser',
+                                     'password': 'testformpassword1'})
         self.assertTrue(form.is_valid(), form.errors)
