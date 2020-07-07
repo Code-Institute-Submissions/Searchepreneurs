@@ -37,7 +37,7 @@ class Client(models.Model):
         on_delete=models.CASCADE
     )
     client_email = models.EmailField(max_length=50)
-    client_url = models.URLField(max_length=200)
+    client_url = models.URLField(max_length=200, blank=False)
     client_description = models.TextField(max_length=800, blank=False, default="none")
     client_date = models.DateField(default="0", blank=False)
     audit_done = models.BooleanField(default=False)
