@@ -374,8 +374,13 @@ This project can be viewed in its rendered form (the deployed version) in Heroku
 It can also be viewed in its code form (the development version) in Github
 [here](https://github.com/Felix-Redwood/Searchepreneurs).
 
+There is also a 'deployed' branch of the Searchepreneurs repository, where the code for the deployment 
+version of the project is stored. The deployed branch can be found [here](https://github.com/Felix-Redwood/Searchepreneurs/tree/deployed).
+
 In the development version of this project, environment variables are stored in an env.py file, and DEBUG is set 
-to True. In the deployed version, environment variables are stored in Heroku, and DEBUG is set to False.
+to True. In the deployed version, environment variables are stored in Heroku, DEBUG is set to False and real 
+emails are sent when the sendmail() function is called, instead of a faux 'command line email', as real email 
+settings, such as EMAIL_PORT, are used in the settings.py file.  
 
 #### Running the Code Locally
 
