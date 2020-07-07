@@ -5,6 +5,8 @@ that it works as required.
 
 ## Automated Testing
 
+
+
 ## Manual Testing
 
 ### The project on different screen sizes
@@ -41,10 +43,15 @@ the current user.
 ### Manually testing the 'purchase' feature
 
 In order to test the 'purchase' feature manually, I went through this process:
-* Choosing a plan to purchase
-* Filling in purchase information
-* Filling in client information
-* Verifying that a client model was generated
+* Navigate to the 'plans' page
+* Click on the 'start now' link under a plan
+* Verify that I am taken to the 'purchase' page
+* Fill in the form on the 'purchase' page and submit the form
+* Verify that I am taken to the 'create client' page
+* Fill in the form on the 'create client' page and submit the form
+* Verify that a client model is generated (through the admin backend)
+* Verify that, upon form submission, I am taken to the 'profile' page, and the 
+client model shows up in a list on the page
 
 First off, I clicked the 'plans' link in the navbar, and was taken to the 'services' page. I then 
 chose a service, and clicked on the 'Start Now' button on the 'basic' service.  
@@ -59,7 +66,31 @@ URL) and an email (I used example@email.com).
 I then clicked the 'submit client information' button, and was taken to the 'profile' page, where 
 there was a single bullet point, stating "Basic purchased on July 5, 2020. Write a review."  
 
+In addition, through the 'admin' Django backend, I manually checked the 'Clients' models for 
+a model with an email of 'example@email.com' and an url of 'https://www.wikipedia.org/'.  
+
 ### Manually testing the 'review' feature
+
+In order to test the 'review' feature manually, I went through this process:
+* Purchase a plan and create a client
+* Verify that there is a link next to the client on my 'profile' page with the text 'Write a 
+review.'
+* Click on the 'Write a review' link and verify that I am taken to the 'review form' page
+* Fill in the review form (with an image), and submit the form
+* Verify that I am taken to the 'reviews' page, and that my review shows up on the page
+
+To begin, I made a purchase (using Stripe's test card number) and created a client.  
+
+After the client model was generated, the client model's information showed up on my profile 
+page, as expected, with a link to the 'review form' page.  
+
+I clicked the link (with the text of 'Write a review.'), and was taken to the 'review_form.html' 
+page. I filled in the form, providing a title, rating, description and an image. I then submitted 
+the form.  
+
+I was taken to the 'reviews' page, and my review showed up, rendered on the page, with the correct 
+title, description, rating and image, as well as the correct information about when the review 
+was written.
 
 ## A bug in the project - creating 'Client' models:
 
