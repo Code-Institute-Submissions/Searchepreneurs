@@ -44,6 +44,6 @@ class TestLogin(TestCase):
         self.assertTrue(form.is_valid(), form.errors)
 
     def test_login_form_with_username_is_valid(self):
-        form = UserRegistrationForm({'username': 'testuser',
+        form = UserLoginForm({'username': 'testuser',
                                      'password': 'testformpassword1'})
         self.assertTrue(form.is_valid(), form.errors)
