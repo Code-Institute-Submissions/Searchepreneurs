@@ -46,27 +46,27 @@
     {% block content %}
     {% endblock %}
     </div>
-    <footer class="footer bg-info" id="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="container-fluid">
-                        <h6><a href="{% url 'services' %}" class="footer-link">Pricing <i class="fas fa-tags"></i></a></h6>
+        <footer class="footer bg-info" id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="container-fluid">
+                            <h6><a href="{% url 'services' %}" class="footer-link">Pricing <i class="fas fa-tags"></i></a></h6>
+                        </div>
+                        <div class="container-fluid">
+                            <h6><a href="{% url 'privacy_policy' %}" class="footer-link">Privacy Policy <i class="fas fa-user-secret"></i></a></h6>
+                        </div>
                     </div>
-                    <div class="container-fluid">
-                        <h6><a href="{% url 'privacy_policy' %}" class="footer-link">Privacy Policy <i class="fas fa-user-secret"></i></a></h6>
+                    <div class="col-sm-6">
+                        <h6 class="footer-header">Contact Us:</h6>
+                        <p><a href="mailto:SEOcontact@gmail.com" class="footer-link">SEOcontact@gmail.com</a></p>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <h6 class="footer-header">Contact Us:</h6>
-                    <p><a href="mailto:SEOcontact@gmail.com" class="footer-link">SEOcontact@gmail.com</a></p>
+                <div class="row" id="copyrightFooter">
+                    <p><i class="fas fa-copyright"></i> Searchepreneurs 2020</p>
                 </div>
             </div>
-            <div class="row" id="copyrightFooter">
-                <p><i class="fas fa-copyright"></i> Searchepreneurs 2020</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     <!--Jquery Link-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
