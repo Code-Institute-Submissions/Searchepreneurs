@@ -5,7 +5,31 @@ that it works as required.
 
 ## Automated Testing
 
+The 'accounts', 'purchase' and 'review' app each have tests.py files, which run automated tests to 
+ensure that form validation is working as it should be.  
 
+For example, in the 'tests.py' files of the 'purchase' app, the TestPurchase class ensures the following: 
+1. A PurchaseForm instance without the 'full_name' field filled in is invalid
+2. A PurchaseForm instance without the 'country' field filled in is invalid
+3. A PurchaseForm instance without the 'region' field filled in is invalid
+4. The full PurchaseForm, with all fields filled in, is valid
+
+By using automated testing to ensure form validation is working as it should, a lot of time and effort is 
+saved, as using manual testing to test form validation would take a very long time in comparison to 
+automated testing.  
+
+### Print statements
+
+In debugging the code, I made sure to include print() statements where data was passing from one form, 
+template or view to another. The majority of these print() statements have been left in for future 
+debugging, so as to help recognise invalid forms/models and to aid in identifying error points.  
+
+One such example of a print() statement is in the create_client view of the views.py file of the 'purchase' 
+app. Print() statements are used to show the User, Service and Purchase models that will be integrated 
+into the Client model, as well as the entire request.POST and the purchase_id variable.  
+
+In the case of an error in the create_client view, the developer can immediately see what data is being 
+passed into the view and can see if that data is valid.  
 
 ## Manual Testing
 
