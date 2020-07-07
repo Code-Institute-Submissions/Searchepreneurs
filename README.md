@@ -16,7 +16,6 @@ Searchepreneurs is run off of the Django framework, to allow for authorization, 
 the frictionless creation of url routes, models, templates and functions.
 
 ## UX:
----
 
 This website is designed for business owners, where part or all of there business is online. These 
 business owners want to improve their site's ranking on search engines such as google.
@@ -77,7 +76,6 @@ as wanting the site to look good on a tablet so that I can browse the site and d
 my tablet.
 
 ## Features:
----
 
 ### Feature 1 - Authentication/authorization
 
@@ -291,7 +289,6 @@ are shown, so that a user is aware of what product is being reviewed.
 * Ability to edit a review
 
 ## Technologies Used:
----
 
 * [Bootstrap](https://getbootstrap.com/) was used for HTML, CSS and JavaScript classes.
 * [Chart.js](https://www.chartjs.org/) was used to render the SEO load time chart on the homepage.
@@ -305,14 +302,12 @@ are shown, so that a user is aware of what product is being reviewed.
 * [Travis](https://travis-ci.org/) was used to test the site's code.
 
 ## Testing:
----
 
 The 'testing' section of this README is very long. As such, it has been written in a seperate markdown 
 file in this project, called 'Testing.md'. That file can be found within the project files or with 
 [*this link*](https://github.com/Felix-Redwood/Searchepreneurs/blob/master/Testing.md).
 
 ## Deployment:
----
 
 ### Setting up the ENV.PY file:
 
@@ -393,7 +388,6 @@ __pip3 install -r requirements.txt__
 This will install the requirements for the project on your IDE.  
 
 ## Credits:
----
 
 ### Content:
 
