@@ -5,7 +5,7 @@
 
 This is the pages app. This app will be used to hold the templates 
 for pages that don't require much backend code. Such pages include 
-the 'Home' pages, as well as the 'Contact/About' page.
+the 'Home' pages, as well as the 'Privacy Policy' page.
 
 
 ## App purpose:
@@ -19,5 +19,4 @@ by providing them with information and navigatability.
 
 This app will contain the templates for:
 * The index (home) page
-* The 'about/contact' page
-* Any other 'frontend-heavy' pages
+* The 'Privacy Policy' page
