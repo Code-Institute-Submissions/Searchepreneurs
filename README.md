@@ -44,6 +44,8 @@ In addition, the 'password-reset' page is only accesible by a link in the 'login
 unlikely that a user would want to reset their password before attempting to log into the site, and 
 therefore it is unnecesary to have the link in the navbar.
 
+A wireframe for the site's homepage can be found [here](https://wireframe.cc/FjEFSh).
+
 ### User Stories:
 
 #### User Type 1 - Small business owner
